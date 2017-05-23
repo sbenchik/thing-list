@@ -5,7 +5,7 @@ import Thing from './Thing'
 const ThingList = (props) => {
     return(
         <ul className="ThingList">
-            { Object.keys(props.things).map(thingID =>  <Thing key={thingID} thing={props.things[thingID]} />) }
+            { Object.keys(props.things).map(thingID =>  <Thing key={thingID} thing={props.things[thingID]} onChange={props.onChange} />) }
         </ul>
     )
 }

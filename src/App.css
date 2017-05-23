@@ -11,31 +11,6 @@ body {
   font-family: sans-serif;
 }
 
-.things {
-  position: relative;
-  list-style: none;
-  padding-left: 0;
-  max-width: 400px;
-  margin: 20px auto;
-  background: white;
-  border-radius: 5px;
-  -webkit-box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
-          box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
-}
-
-.thing {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  border-bottom: 1px solid #F1F1F1;
-}
-
-.thing:last-child {
-  border-bottom: none;
-}
-
-
 input:checked + .details {
   background:#F9F9F9;
   text-decoration: line-through;

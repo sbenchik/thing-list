@@ -1,22 +1,38 @@
 import React, { Component } from 'react';
 import Header from './Header'
 import ThingList from './ThingList'
+import AddButton from './AddButton'
 import './App.css';
 
 class App extends Component {
-  state = {
-    things: {
-      'thing-1': {id: 'thing-1', name: 'Milk'},
-      'thing-2': {id: 'thing-2', name: 'Bread'},
-      'thing-3': {id: 'thing-3', name: 'Bibb lettuce'},
-    },
+  constructor(){
+    super()
+    this.thingCounter = 0
+    this.state = {
+      things: {},
+    }
+    this.addThing = this.addThing.bind(this)
+    this.onChange = this.onChange.bind(this)
+  }
+
+  onChange(ev){
+    alert('test')
+  }
+
+  addThing(ev){
+    ev.preventDefault()
+    let id = this.thingCounter++
+    const things = {...this.state.things}
+    things[id] = {id: id, name: "New Thing"}
+    this.setState({ things })
   }
   
   render() {
     return (
       <div className="App">
         <Header />
-        <ThingList things={this.state.things}/>
+        <AddButton addThing={this.addThing} />
+        <ThingList things={this.state.things} onChange={this.onChange}/>
       </div>
     )
   }
