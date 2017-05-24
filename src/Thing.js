@@ -6,7 +6,7 @@ const Thing = ({ thing }, props) => {
         <li className="Thing">
             <input type="checkbox" value="on" />
             <div className="details">
-                <div className="name" contentEditable onChange={props.onChange}>
+                <div className="name" contentEditable placeholder="New Item" onChange={props.onChange}>
                     {thing.name}
                 </div>
                 <span className="actions">

@@ -5,25 +5,26 @@ import AddButton from './AddButton'
 import './App.css';
 
 class App extends Component {
-  constructor(){
-    super()
-    this.thingCounter = 0
-    this.state = {
+  // constructor(){
+  //   super()
+  //   this.thingCounter = 0
+  //   this.state = {
+  //     things: {},
+  //   }
+  //   this.addThing = this.addThing.bind(this)
+  // }
+
+  state = {
       things: {},
-    }
-    this.addThing = this.addThing.bind(this)
-    this.onChange = this.onChange.bind(this)
   }
 
-  onChange(ev){
-    alert('test')
-  }
+  thingCounter = 0
 
-  addThing(ev){
+  addThing = (ev) => {
     ev.preventDefault()
-    let id = this.thingCounter++
+    const id = this.thingCounter++
     const things = {...this.state.things}
-    things[id] = {id: id, name: "New Thing"}
+    things[id] = {id: id, name: ""}
     this.setState({ things })
   }
   
