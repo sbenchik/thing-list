@@ -26,7 +26,7 @@ class App extends Component {
     ev.preventDefault()
     const id = this.thingCounter++
     const things = {...this.state.things}
-    things[id] = {id: id, name: '', checked: false,}
+    things[id] = {id: id, name: '', checked: false, date: '',}
     this.setState({ things })
   }
 
@@ -48,6 +48,7 @@ class App extends Component {
     this.setState({ things })
   }
   
+
   render() {
     const actions = {
       saveThing: this.saveThing,

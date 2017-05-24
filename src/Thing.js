@@ -29,6 +29,12 @@ class Thing extends Component{
         complete(thing)
     }
 
+    updateDate = (ev) => {
+        const { thing, saveThing } = this.props
+        thing.date = ev.target.value
+        saveThing(thing)
+    }
+
     render(){
         const {thing, removeThing } = this.props
         return (
@@ -37,7 +43,7 @@ class Thing extends Component{
                 <div className="details">
                     <ContentEditable className="name" html={thing.name} onChange = {this.updateName} 
                         onKeyPress={this.blurOnEnter} ref={input => this.nameInput = input}/>
-                    <input type="date"/>
+                    <input type="date" onChange={this.updateDate} value={thing.date}/>
                     <Actions thing={thing} removeThing={removeThing}/>               
                 </div>
             </li>
