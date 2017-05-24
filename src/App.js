@@ -27,13 +27,19 @@ class App extends Component {
     things[id] = {id: id, name: ""}
     this.setState({ things })
   }
+
+  saveThing = (thing) => {
+    const things = {...this.state.things}
+    things[thing.id] = thing
+    this.setState({ things })
+  }
   
   render() {
     return (
       <div className="App">
         <Header />
         <AddButton addThing={this.addThing} />
-        <ThingList things={this.state.things} onChange={this.onChange}/>
+        <ThingList things={this.state.things} saveThing={this.saveThing}/>
       </div>
     )
   }

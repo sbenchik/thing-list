@@ -9,7 +9,9 @@ const ThingList = (props) => {
             { Object
             .keys(props.things)
             .sort((a, b) => b[0] - a[0])
-            .map(thingID =>  <Thing key={thingID} thing={props.things[thingID]} onChange={props.onChange} />) }
+            .map(thingID =>  <Thing {...props} 
+                                key={thingID} 
+                                thing={props.things[thingID]} />) }
         </ul>
     )
 }
