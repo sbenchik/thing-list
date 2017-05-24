@@ -24,14 +24,20 @@ class Thing extends Component{
         }
     }
 
+    completeItem = (ev) => {
+        const { thing, complete } = this.props
+        complete(thing)
+    }
+
     render(){
         const {thing, removeThing } = this.props
         return (
             <li className="Thing">
-                <input type="checkbox" value="on" />
+                <input type="checkbox" value="on" onChange={this.completeItem} checked={thing.checked}/>
                 <div className="details">
                     <ContentEditable className="name" html={thing.name} onChange = {this.updateName} 
                         onKeyPress={this.blurOnEnter} ref={input => this.nameInput = input}/>
+                    <input type="date"/>
                     <Actions thing={thing} removeThing={removeThing}/>               
                 </div>
             </li>

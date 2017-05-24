@@ -9,10 +9,10 @@ import './App.css';
 class App extends Component {
   componentWillMount(){
     base.syncState('things', 
-    {
-      context: this,
-      state: 'things'
-    }
+      {
+        context: this,
+        state: 'things'
+      }
     )
   }
 
@@ -26,7 +26,7 @@ class App extends Component {
     ev.preventDefault()
     const id = this.thingCounter++
     const things = {...this.state.things}
-    things[id] = {id: id, name: ""}
+    things[id] = {id: id, name: '', checked: false,}
     this.setState({ things })
   }
 
@@ -41,11 +41,18 @@ class App extends Component {
     things[thing.id] = null
     this.setState({ things })
   }
+
+  complete = (thing) => {
+    const things = {...this.state.things}
+    things[thing.id].checked = !things[thing.id].checked
+    this.setState({ things })
+  }
   
   render() {
     const actions = {
       saveThing: this.saveThing,
       removeThing: this.removeThing,
+      complete: this.complete,
     }
 
     return (
