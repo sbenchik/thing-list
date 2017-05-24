@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
+
 import Header from './Header'
 import ThingList from './ThingList'
 import AddButton from './AddButton'
+import base from './base'
 import './App.css';
 
 class App extends Component {
-  // constructor(){
-  //   super()
-  //   this.thingCounter = 0
-  //   this.state = {
-  //     things: {},
-  //   }
-  //   this.addThing = this.addThing.bind(this)
-  // }
+  componentWillMount(){
+    base.syncState('things', 
+    {
+      context: this,
+      state: 'things'
+    }
+    )
+  }
 
   state = {
       things: {},
@@ -36,7 +38,7 @@ class App extends Component {
 
   removeThing = (thing) => {
     const things = {...this.state.things}
-    delete things[thing.id]
+    things[thing.id] = null
     this.setState({ things })
   }
   
