@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 import Header from './Header'
 import ThingList from './ThingList'
 import AddButton from './AddButton'
-import base from './base'
+import SignIn from './SignIn'
+import SignOut from './SignOut'
+import base, { auth } from './base'
 import './App.css';
 
 class App extends Component {
@@ -47,6 +49,10 @@ class App extends Component {
     things[thing.id].checked = !things[thing.id].checked
     this.setState({ things })
   }
+
+  signOut = () => {
+    auth.signOut()
+  }
   
 
   render() {
@@ -59,6 +65,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <SignIn />
+        <SignOut signOut={this.signOut}/>
         <AddButton addThing={this.addThing} />
         <ThingList things={this.state.things} {...actions}/>
       </div>
