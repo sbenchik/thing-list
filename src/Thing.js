@@ -26,7 +26,7 @@ class Thing extends Component{
 
     handleChange = (ev) => {
         const { thing, saveThing } = this.props
-        const field = ev.currentTarger.getAttribute('name')
+        const field = ev.currentTarget.getAttribute('name')
         thing[field] = ev.target.value
         saveThing(thing)
     }

@@ -9,18 +9,33 @@ import base, { auth } from './base'
 import './App.css';
 
 class App extends Component {
+  state = {
+      things: {},
+      uid: null,
+  }
+
   componentWillMount(){
-    base.syncState('things', 
-      {
-        context: this,
-        state: 'things'
+    auth.onAuthStateChanged(
+      (user) => {
+        if(user){
+          this.authHandler({ user })
+        }
       }
     )
   }
 
-  state = {
-      things: {},
+  setUpThings = () => {
+    this.ref = base.syncState(`${this.state.uid}/things`, 
+      {
+        context: this,
+        state: 'things',
+      }
+    )
   }
+
+  authHandler = (authData) => {
+    this.setState({ uid: authData.user.uid }, this.setUpThings)
+  } 
 
   thingCounter = 0
 
@@ -51,24 +66,30 @@ class App extends Component {
   }
 
   signOut = () => {
-    auth.signOut()
+    auth.signOut().then(()=>this.setState({uid: null}))
   }
   
-
-  render() {
+  renderThings() {
     const actions = {
       saveThing: this.saveThing,
       removeThing: this.removeThing,
       complete: this.complete,
     }
 
+    return(
+        <div>
+          <SignOut signOut={this.signOut}/>
+          <AddButton addThing={this.addThing} />
+          <ThingList things={this.state.things} {...actions}/>
+        </div>
+    )
+  }
+
+  render() {
     return (
       <div className="App">
         <Header />
-        <SignIn />
-        <SignOut signOut={this.signOut}/>
-        <AddButton addThing={this.addThing} />
-        <ThingList things={this.state.things} {...actions}/>
+        { this.state.uid ? this.renderThings() : <SignIn authHandler={this.authHandler}/>}
       </div>
     )
   }
