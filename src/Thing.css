@@ -3,7 +3,11 @@
   display: flex;
   -ms-flex-align: center;
       align-items: center;
-  border-bottom: 1px solid #F1F1F1;
+  /*border-bottom: 1px solid #F1F1F1;*/
+  margin-bottom: 1rem;
+  background: white;
+  -webkit-box-shadow: 0px 2px 0 rgba(0,0,0,0.1);
+          box-shadow: 0px 2px 0 rgba(0,0,0,0.1);
 }
 
 .Thing:last-child {
@@ -30,7 +34,7 @@ input[type="checkbox"] {
   font-family: 'helvetica neue', sans-serif;
   font-size: 20px;
   font-weight: 200;
-  border-left: 1px solid #D1E2FF;
+  /*border-left: 1px solid #D1E2FF;*/
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;

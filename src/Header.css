@@ -1,18 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Chonburi|BioRhyme);
+@import url(https://fonts.googleapis.com/css?family=Pacifico|BioRhyme);
 
 h1 {
-  color: #F5B700;
-  font-family: Chonburi, serif;
+  color: #1D2225;
+  font-family: Pacifico, serif;
   font-size: 4rem;
+  letter-spacing: .35rem;
   text-align: center;
   margin-bottom: 0;
-  text-shadow: 7px 7px 0 rgba(0,0,0,0.1);
-}
-
-h2 {
-  font-family: BioRhyme, sans-serif;
-  font-size: 1.2rem;
-  text-align: center;
-  text-transform: uppercase;
-  margin-top: 0;
+  text-shadow: 4px 4px 0 rgba(0,0,0,0.1);
 }

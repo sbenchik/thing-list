@@ -5,12 +5,12 @@ html {
 }
 
 body {
-  background: #00b4ff;
+  background: #F5F0EF;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
-
+/*
 input:checked + .details {
   background:#F9F9F9;
   text-decoration: line-through;
@@ -98,4 +98,4 @@ button.logout {
   font-family: 'helvetica neue', sans-serif;
   font-size: 20px;
   font-weight: 200;
-}
+}*/

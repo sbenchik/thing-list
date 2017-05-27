@@ -28,6 +28,6 @@ button.github {
   font-family: 'helvetica neue', sans-serif;
   font-size: 20px;
   font-weight: 200;
-  -webkit-box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
-          box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+  /*-webkit-box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+          box-shadow: 4px 4px 0 rgba(0,0,0,0.1);*/
 }
