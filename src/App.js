@@ -41,10 +41,13 @@ class App extends Component {
 
   addThing = (ev) => {
     ev.preventDefault()
+    const nameField = ev.target.querySelector('input')
+    const name = nameField.value
     const id = this.thingCounter++
     const things = {...this.state.things}
-    things[id] = {id: id, name: '', checked: false, date: '',}
+    things[id] = {id: id, name: name, checked: false, date: '',}
     this.setState({ things })
+    ev.target.reset()
   }
 
   saveThing = (thing) => {

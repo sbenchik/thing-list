@@ -13,9 +13,7 @@
   color: #AD343E;
 }
 
-button.add-thing,
-button.github {
-  background-color: #F5B700;
+input.add-thing{
   border: 0;
   border-radius: 5px;
   width: 400px;

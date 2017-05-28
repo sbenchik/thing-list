@@ -7,7 +7,7 @@ const Actions = ({ thing, removeThing }) => {
     return(
         <span className="actions">
                     <button className="remove" onClick={() => removeThing(thing)}>
-                        <i className="fa fa-trash-o"></i>
+                        <i className="fa fa-remove"></i>
                     </button>
         </span>
     )
