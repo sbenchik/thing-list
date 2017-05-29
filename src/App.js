@@ -81,7 +81,7 @@ class App extends Component {
 
     return(
         <div>
-          <SignOut signOut={this.signOut}/>
+          {/*<SignOut signOut={this.signOut}/>*/}
           <AddButton addThing={this.addThing} />
           <ThingList things={this.state.things} {...actions}/>
         </div>
