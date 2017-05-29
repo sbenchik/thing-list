@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Grid, Row, Col } from 'react-bootstrap'
 
 import Header from './Header'
 import ThingList from './ThingList'
@@ -80,19 +81,22 @@ class App extends Component {
     }
 
     return(
-        <div>
-          {/*<SignOut signOut={this.signOut}/>*/}
-          <AddButton addThing={this.addThing} />
-          <ThingList things={this.state.things} {...actions}/>
-        </div>
+        <Grid>
+          <Row>
+            <Col sm={6} smOffset={3}>
+              <AddButton addThing={this.addThing} />
+              <ThingList things={this.state.things} {...actions}/>
+            </Col>
+          </Row>
+        </Grid>
     )
   }
 
   render() {
     return (
       <div className="App">
-        <Header />
-        { this.state.uid ? this.renderThings() : <SignIn authHandler={this.authHandler}/>}
+        <Header uid={this.state.uid} signOut={this.signOut} signIn={this.authHandler}/>
+        { this.state.uid ? this.renderThings() : null}
       </div>
     )
   }

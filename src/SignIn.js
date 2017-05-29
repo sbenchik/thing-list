@@ -1,6 +1,8 @@
 import React from 'react'
 
 import { auth, githubProvider } from './base'
+import { Button } from 'react-bootstrap';
+
 import './SignIn.css'
 
 const SignIn = ({ authHandler }) => {
@@ -11,7 +13,7 @@ const SignIn = ({ authHandler }) => {
     }
     
     return(
-       <button className="Login" onClick={() => authenticate(githubProvider)}>Login with Github</button>          
+       <Button bsStyle="outline-success" className="Login" onClick={() => authenticate(githubProvider)}>Login with Github</Button>          
     )
 }
 
