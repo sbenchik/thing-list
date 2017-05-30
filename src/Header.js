@@ -1,8 +1,8 @@
 import React from 'react'
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
+
 import SignOut from './SignOut'
 import SignIn from './SignIn'
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
-
 
 import './Header.css'
 

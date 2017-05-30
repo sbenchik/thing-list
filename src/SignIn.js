@@ -13,7 +13,7 @@ const SignIn = ({ authHandler }) => {
     }
     
     return(
-       <Button bsStyle="outline-success" className="Login" onClick={() => authenticate(githubProvider)}>Login with Github</Button>          
+       <Button className="Login" onClick={() => authenticate(githubProvider)}>Login with Github</Button>          
     )
 }
 

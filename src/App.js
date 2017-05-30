@@ -96,7 +96,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header uid={this.state.uid} signOut={this.signOut} signIn={this.authHandler}/>
-        { this.state.uid ? this.renderThings() : null}
+        { this.state.uid ? this.renderThings() : null }
       </div>
     )
   }

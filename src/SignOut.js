@@ -6,7 +6,7 @@ import './SignOut.css'
 
 const SignOut = ({ signOut }) => {
     return(
-       <Button bsStyle="outline-success" className="logout" onClick={signOut}>Sign Out</Button>          
+       <Button className="logout" onClick={signOut}>Sign Out</Button>          
     )
 }
 

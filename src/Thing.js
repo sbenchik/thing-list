@@ -49,7 +49,7 @@ class Thing extends Component{
                 <input type="checkbox" value="on" onChange={this.completeItem} checked={thing.checked}/>
                 <div className="details">
                     <ContentEditable name="name" className="name" html={thing.name} onChange = {this.handleChange} 
-                        onKeyPress={this.blurOnEnter} ref={input => this.nameInput = input}/>
+                        onKeyPress={this.blurOnEnter} ref={(input) => {this.nameInput = input}}/>
                     <input name="dueOn" type="date" onChange={this.handleChange} defaultValue={thing.date}/>
                     <Actions thing={thing} removeThing={removeThing}/>               
                 </div>
